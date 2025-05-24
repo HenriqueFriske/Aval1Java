@@ -2,10 +2,8 @@ package app.clients.service;
 
 import app.clients.dao.ClientDAO;
 import app.clients.dto.ClientSummaryDTO;
-import app.clients.exceptions.ClientValidationException;
 import app.clients.model.Client;
-import app.clients.validators.ClientValidator;
-
+import app.clients.validator.ClientValidator;
 import java.util.List;
 
 public class ClientService {
@@ -18,7 +16,7 @@ public class ClientService {
                              String neighborhood, String city, String uf) {
         Client c = new Client(0, name, cpf, email, homePhone, cellPhone,
                               zipCode, address, number, neighborhood, city, uf);
-        validator.validate(c);
+        validator.validate(name, cpf, email, cellPhone);
         dao.create(c);
     }
 
@@ -28,7 +26,7 @@ public class ClientService {
                              String neighborhood, String city, String uf) {
         Client c = new Client(id, name, cpf, email, homePhone, cellPhone,
                               zipCode, address, number, neighborhood, city, uf);
-        validator.validate(c);
+        validator.validate(name, cpf, email, cellPhone);
         dao.update(c);
     }
 

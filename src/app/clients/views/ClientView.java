@@ -767,10 +767,10 @@ public class ClientView extends javax.swing.JFrame {
 
             if (code.isEmpty()) {
                 controller.createClient(name, cpf, email, homePhone, cellPhone, zipCode, address, addressNumber, neighborhood, city, uf);
-                JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso!");
+                //JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso!");
             } else {
                 controller.updateClient(Integer.parseInt(code), name, cpf, email, homePhone, cellPhone, zipCode, address, addressNumber, neighborhood, city, uf);
-                JOptionPane.showMessageDialog(null, "Cadastro atualizado com sucesso!");
+                //JOptionPane.showMessageDialog(null, "Cadastro atualizado com sucesso!");
             }
             
             disableClientTextFields();
